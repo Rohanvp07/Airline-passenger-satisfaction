@@ -18,6 +18,8 @@ page_bg_img = '''
 body {
 background-image: url("https://wallpaperaccess.com/full/254361.jpg");
 background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
 </style>
 '''
@@ -29,24 +31,24 @@ st.markdown(
 
 .big-font {
     font-size:40px !important;
-    color:red;
+    color:blue;
     text-align:center;
 }
 .small-font {
     font-size:20px !important;
-    color:white;
+    color:black;
     text-align:center;
 
 }
 .error_class {
-    font-size:30px !important;
+    font-size:25px !important;
     color:black;
     background:#ff6666;
     text-align:center;
     
 }
 .success_class {
-    font-size:30px !important;
+    font-size:25px !important;
     color:black;
     background:#66ff66;
     text-align:center;
@@ -140,7 +142,7 @@ def input_page():
     if btn:
         
         cust_type = Customer_Type_encoder.transform(np.array(cust_type).reshape(-1,1))[0]
-        #age = scaler.transform(np.array(float(age)).reshape(-1,1))[0]
+        age = scaler.transform(np.array(float(age)).reshape(-1,1))
         travel_type = Type_of_Travel_encoder.transform(np.array(travel_type).reshape(-1,1))[0]
         class_ = Class_encoder.transform(np.array(class_).reshape(-1,1))[0]
         #flight_dist = scaler.transform(np.array(float(flight_dist)).reshape(-1,1))
