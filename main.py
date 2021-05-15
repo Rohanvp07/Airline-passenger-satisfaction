@@ -140,12 +140,12 @@ def input_page():
     if btn:
         
         cust_type = Customer_Type_encoder.transform(np.array(cust_type).reshape(-1,1))[0]
-        age = scaler.transform(np.array(float(age)).reshape(-1,1))[0]
+        #age = scaler.transform(np.array(float(age)).reshape(-1,1))[0]
         travel_type = Type_of_Travel_encoder.transform(np.array(travel_type).reshape(-1,1))[0]
         class_ = Class_encoder.transform(np.array(class_).reshape(-1,1))[0]
-        flight_dist = scaler.transform(np.array(float(flight_dist)).reshape(-1,1))
-        dept_delay = scaler.transform(np.array(float(dept_delay)).reshape(-1,1))
-        arr_delay = scaler.transform(np.array(float(arr_delay)).reshape(-1,1))
+        #flight_dist = scaler.transform(np.array(float(flight_dist)).reshape(-1,1))
+        #dept_delay = scaler.transform(np.array(float(dept_delay)).reshape(-1,1))
+        #arr_delay = scaler.transform(np.array(float(arr_delay)).reshape(-1,1))
     
         test=np.array([[cust_type,age,travel_type,class_,flight_dist,
                        wifi_service,ease_ol_book,food,ol_boarding,seat,
