@@ -16,10 +16,11 @@ Class_encoder = pickle.load(open("Class_encoder.pkl","rb"))
 page_bg_img = '''
 <style>
 body {
-background-image: url("https://wallpaperaccess.com/full/254361.jpg");
+background-image: url('https://user-images.githubusercontent.com/49580063/135077940-79382909-47a7-4607-8c12-41c424ad170b.png');
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
+
 }
 </style>
 '''
@@ -31,12 +32,12 @@ st.markdown(
 
 .big-font {
     font-size:40px !important;
-    color:blue;
+    color:white;
     text-align:center;
 }
 .small-font {
     font-size:20px !important;
-    color:black;
+    color:white;
     text-align:center;
 
 }
@@ -71,7 +72,7 @@ st.markdown(
     font-family: monospace;
 }
 .slider{
-    color:black
+    color:white
 }
 .st-bb {
     background-color: transparent;
@@ -142,7 +143,7 @@ def input_page():
     if btn:
         
         cust_type = Customer_Type_encoder.transform(np.array(cust_type).reshape(-1,1))[0]
-        age = scaler.transform(np.array(float(age)).reshape(-1,1))
+        age = scaler.transform(np.array(float(age)).reshape(-1,1))[0]
         travel_type = Type_of_Travel_encoder.transform(np.array(travel_type).reshape(-1,1))[0]
         class_ = Class_encoder.transform(np.array(class_).reshape(-1,1))[0]
         flight_dist = scaler.transform(np.array(float(flight_dist)).reshape(-1,1))
